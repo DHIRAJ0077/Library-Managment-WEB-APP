@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Image and Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+ body {
+          margin: 0;
+          padding: 0;
+          font-family: Arial, sans-serif;
+      }
+
+      .container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          position: relative;
+          overflow: hidden;
+      }
+
+      .content {
+          display: flex;
+          align-items: center;
+      }
+
+      .slide-image {
+          max-width: 50%;
+          transition: transform 0.5s ease; /* Adjust the transition duration as needed */
+      }
+
+      .slide-image.active {
+          transform: translateX(-40%); /* Slide image to the left */
+      }
+
+      .login-form {
+        height: 500px;
+        width: 300px;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(199, 192, 192, 0.879);
+        
+          background-color: #817d7d;
+          transition: opacity 0.5s ease; /* Adjust the transition duration as needed */
+          opacity: 0;
+      }
+
+      .slide-image.active + .login-form {
+          opacity: 1;
+      }
+
+      h2 {
+          text-align: center;
+          margin-bottom: 20px;
+      }
+
+      .form-group {
+          margin-bottom: 20px;
+      }
+
+      label {
+          display: block;
+          margin-bottom: 5px;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+          width: 90%;
+          padding: 10px;
+          margin-bottom: 5px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+      }
+
+      button {
+          width: 60%;
+          margin: 60px;;
+          padding: 20px;
+          border: none;
+          border-radius: 4px;
+          background-color: #545050;
+          color: white;
+          cursor: pointer;
+      }
+
+      button:hover {
+          background-color: #909590;
+      }
+      .navbar {
+        background-color: #908c8c;
+            padding: 10px ;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #555
+        }
+
+        .navbar-brand img {
+            height: 40px; /* Adjust height as needed */
+            width: auto;
+        }
+
+    </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="navbar-brand">
+        <img src="logo.png" alt="Logo">
+    </div>
+    
+    <div class="container">
+        <img src="login.gif" alt="Image" class="slide-image" id="slideImage">
+        <div class="login-form" id="loginForm">
+            <form id="login-form">
+                <h2>Login</h2>
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById("slideImage").addEventListener("click", function() {
+            this.classList.toggle("active");
+        });
+    </script>
+</body>
+</html>

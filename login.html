@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Image and Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-vb2+QQI39G2xTKqgK3N22pjQyp9QyHfEZ/nQGgckbP2M6mi+tPd5AyzzXoPW55R6Ncs+WOp9WrfXvKd9OdMbuQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+        }
+
+        .slide-image {
+            max-width: 50%;
+            transition: transform 0.5s ease;
+            /* Adjust the transition duration as needed */
+        }
+
+        .slide-image.active {
+            transform: translateX(-40%);
+            /* Slide image to the left */
+        }
+
+        .login-form {
+            height: 500px;
+            width: 300px;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(199, 192, 192, 0.879);
+
+            background-color: #817d7d;
+            transition: opacity 0.5s ease;
+            /* Adjust the transition duration as needed */
+            opacity: 0;
+        }
+
+        .slide-image.active+.login-form {
+            opacity: 1;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 60%;
+            margin-left: 60px;
+            padding: 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #0b0828;
+            color: rgb(62, 60, 60);
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1d1d1d;
+        }
+
+        .social-icons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            color: #282626;
+            font-size: 24px;
+            text-decoration: none;
+        }
+
+        .social-icons a:last-child {
+            margin-right: 0;
+        }
+
+        .social-icons a img {
+            /* Add inline styling to ensure the icons are visible */
+            font-size: 24px;
+            color: #fff;
+           padding: 5px;
+            height: 40px;
+            width: auto;
+            /* Change color to white */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="img/login.gif" alt="Image" class="slide-image" id="slideImage">
+        <div class="login-form" id="loginForm">
+            <form id="login-form">
+                <h2>Login</h2>
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="rememberMe">
+                    <label for="rememberMe">Remember Me</label>
+                </div>
+                <button type="submit">Login</button>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/"><img src="img/facebook.png"></a>
+                    <a href="http://gmail.com/"><img src="img/social.png"></a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("slideImage").addEventListener("click", function () {
+            this.classList.toggle("active");
+        });
+    </script>
+</body>
+
+</html>

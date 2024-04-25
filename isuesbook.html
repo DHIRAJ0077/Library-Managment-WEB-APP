@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issue Book Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #908c8c;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+        }
+
+        #issue-form {
+            background-color: rgba(97, 92, 92, 0.9); /* Transparent background */
+            padding: 40px;
+            width: 350px;
+            border-radius: 8px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.3); /* Box shadow */
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+
+        #issue-form:hover {
+            background-color: rgb(81, 78, 78); /* Change background color on hover */
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button[type="submit"] {
+            width: 70%;
+            margin-left: 60px;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            background-color: #090a25;
+            color: white;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #212321;
+        }
+
+        .navbar {
+            background-color: #908c8c;
+            padding: 10px ;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #555
+        }
+
+         .logo img {
+            margin-left: 20px;
+            
+            height: 70px; /* Adjust the height of the logo */
+            width: auto; /* Allow the width to adjust automatically */
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .navbar li {
+            margin-right: 40px;
+        }
+
+        .navbar a {
+            font-size: 28px;
+            text-decoration: none;
+            color: #090a25;
+            font-weight: bolder;
+            transition: color 0.3s ease, text-shadow 0.3s ease; /* Added transition effect */
+        }
+
+        .navbar a:hover {
+            color: #01020c;
+            text-shadow: 2px 2px 4px rgba(70, 70, 71, 0.896); /* Added text shadow on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="/img/logo.png" alt="Logo">
+        </div>
+        <ul>
+            <li><a href="Register.html">Register</a></li>
+            <li><a href="Deshboard.html">Dashboard</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="login.html">login</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <form id="issue-form">
+          <h2>Issue Book</h2>
+          <div class="form-group">
+            <label for="book-title">Book Title:</label>
+            <input type="text" id="book-title" name="book-title" required>
+          </div>
+          <div class="form-group">
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" required>
+          </div>
+          <div class="form-group">
+            <label for="isbn">ISBN:</label>
+            <input type="text" id="isbn" name="isbn" required>
+          </div>
+          <div class="form-group">
+            <label for="member-id">Member ID:</label>
+            <input type="text" id="member-id" name="member-id" required>
+          </div>
+          <div class="form-group">
+            <label for="issue-date">Issue Date:</label>
+            <input type="date" id="issue-date" name="issue-date" required>
+          </div>
+          <button type="submit">Issue</button>
+        </form>
+      </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
