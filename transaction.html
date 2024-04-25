@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Transactions</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #696969;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background-color: #f2f2f2;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #2d2f2d;
+            color: white;
+        }
+
+        .navbar {
+            background-color: #908c8c;
+            padding: 10px ;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #555
+        }
+
+         .logo img {
+            margin-left: 20px;
+            
+            height: 70px; /* Adjust the height of the logo */
+            width: auto; /* Allow the width to adjust automatically */
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .navbar li {
+            margin-right: 40px;
+        }
+
+        .navbar a {
+            font-size: 28px;
+            text-decoration: none;
+            color: #090a25;
+            font-weight: bolder;
+            transition: color 0.3s ease, text-shadow 0.3s ease; /* Added transition effect */
+        }
+
+        .navbar a:hover {
+            color: #01020c;
+            text-shadow: 2px 2px 4px rgba(70, 70, 71, 0.896); /* Added text shadow on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="/img/logo.png" alt="Logo">
+        </div>
+        <ul>
+            <li><a href="Register.html">Register</a></li>
+            <li><a href="Deshboard.html">Dashboard</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="login.html">login</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <h2>Library Transactions</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Transaction ID</th>
+                    <th>Book</th>
+                    <th>Member</th>
+                    <th>Type</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>TRX123</td>
+                    <td>Harry Potter and the Sorcerer's Stone</td>
+                    <td>John Doe</td>
+                    <td>Check Out</td>
+                    <td>2024-04-20</td>
+                </tr>
+                <tr>
+                    <td>TRX124</td>
+                    <td>The Great Gatsby</td>
+                    <td>Jane Smith</td>
+                    <td>Return</td>
+                    <td>2024-04-22</td>
+                </tr>
+                <!-- Add more transactions as needed -->
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

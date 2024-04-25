@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Registration Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #908c8c;
+        }
+
+        .container {
+            display: flex;
+            height: 200px;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+        }
+
+        .registration-form {
+            background-color: rgba(72, 72, 73, 0.8);
+            width: 500px;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(36, 33, 33, 0.877);
+            transition: background-color 0.3s ease;
+        }
+
+        .registration-form:hover {
+            background-color: rgb(81, 78, 78);
+            /* Dark gray */
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            color: white;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        button[type="submit"] {
+            width: 60%;
+            margin-left: 60px;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #070b25;
+            /* Green */
+            color: white;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #323234;
+            /* Darker green */
+        }
+        .navbar {
+            background-color: #908c8c;
+            padding: 10px ;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #555
+        }
+
+         .logo img {
+            margin-left: 20px;
+            
+            height: 70px; /* Adjust the height of the logo */
+            width: auto; /* Allow the width to adjust automatically */
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .navbar li {
+            margin-right: 40px;
+        }
+
+        .navbar a {
+            font-size: 28px;
+            text-decoration: none;
+            color: #090a25;
+            font-weight: bolder;
+            transition: color 0.3s ease, text-shadow 0.3s ease; /* Added transition effect */
+        }
+
+        .navbar a:hover {
+            color: #01020c;
+            text-shadow: 2px 2px 4px rgba(70, 70, 71, 0.896); /* Added text shadow on hover */
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="/img/logo.png" alt="Logo">
+        </div>
+        <ul>
+            <li><a href="Register.html">Register</a></li>
+            <li><a href="Deshboard.html">Dashboard</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="login.html">login</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <form class="registration-form">
+          <h2>Book Registration</h2>
+          <div class="form-group">
+            <label for="book-title">Book Title:</label>
+            <input type="text" id="book-title" name="book-title" required>
+          </div>
+          <div class="form-group">
+            <label for="book-author">Author:</label>
+            <input type="text" id="book-author" name="book-author" required>
+          </div>
+          <div class="form-group">
+            <label for="isbn">ISBN:</label>
+            <input type="text" id="isbn" name="isbn" required>
+          </div>
+          <div class="form-group">
+            <label for="publisher">Publisher:</label>
+            <input type="text" id="publisher" name="publisher" required>
+          </div>
+          <div class="form-group">
+            <label for="publication-year">Publication Year:</label>
+            <input type="number" id="publication-year" name="publication-year" required>
+          </div>
+          <div class="form-group">
+            <label for="genre">Genre:</label>
+            <input type="text" id="genre" name="genre" required>
+          </div>
+          <button type="submit">Register Book</button>
+        </form>
+      </div>
+</body>
+
+</html>

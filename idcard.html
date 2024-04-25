@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Card Generator</title>
+    <link rel="stylesheet" href="styles.css">
+<style>
+    body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#idCard {
+    display: none;
+    border: 1px solid #777373;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#idCard img {
+    max-width: 50%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>ID Card Generator</h1>
+        <form id="idForm">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" required>
+            
+            <label for="idNumber">ID Number:</label>
+            <input type="text" id="idNumber" required>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" required>
+
+            <label for="photo">Photo:</label>
+            <input type="file" id="photo" accept="image/*" required>
+
+            <button type="submit">Generate ID Card</button>
+        </form>
+
+        <div id="idCard"></div>
+
+        <button id="printButton" style="display: none;">Print ID Card</button>
+    </div>
+
+    <script>document.getElementById('idForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const fullName = document.getElementById('fullName').value;
+        const idNumber = document.getElementById('idNumber').value;
+        const dob = document.getElementById('dob').value;
+        const photo = document.getElementById('photo').files[0];
+    
+        const reader = new FileReader();
+        reader.onload = function() {
+            const imgData = reader.result;
+            const collegeLogo = 'path/to/college-logo.png'; // Replace with the path to your college logo
+            const idCardHtml = `
+                <h2>ID Card</h2>
+                <img src="${collegeLogo}" alt="College Logo" style="max-width: 100px;">
+                <p><strong>Name:</strong> ${fullName}</p>
+                <p><strong>ID Number:</strong> ${idNumber}</p>
+                <p><strong>Date of Birth:</strong> ${dob}</p>
+                <img src="${imgData}" alt="Photo">
+            `;
+            document.getElementById('idCard').innerHTML = idCardHtml;
+            document.getElementById('idCard').style.display = 'block';
+            document.getElementById('printButton').style.display = 'block';
+        }
+        reader.readAsDataURL(photo);
+    });
+    
+    document.getElementById('printButton').addEventListener('click', function() {
+        window.print();
+    });
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Navigation bar styles */
+        .navbar {
+            background-color: rgb(98, 101, 98);
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            margin-left: 20px;
+            background-color: rgb(98, 101, 98);
+            height: 70px;
+            /* Adjust the height of the logo */
+            width: auto;
+            /* Allow the width to adjust automatically */
+        }
+        .logo:hover{
+            opacity: 0.6;
+            transform: scale(1.2);  
+
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .navbar li {
+            margin-right: 40px;
+        }
+
+        .navbar a {
+            font-size: 28px;
+            text-decoration: none;
+            color: rgb(2, 7, 32);
+            font-weight: bolder;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+            /* Added transition effect */
+        }
+
+        .navbar a:hover {
+            color: #01020c;
+            text-shadow: 2px 2px 4px rgba(5, 4, 37, 0.896);
+            /* Added text shadow on hover */
+        }
+
+        /* Dashboard styles */
+        .dashboard-container {
+            background-color: rgb(64, 60, 60);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 5px;
+            justify-items: center;
+            align-items: center;
+            height: 90vh;
+        }
+
+        .dashboard-box {
+            background-color: #333;
+            padding: 20px;
+            width: 200px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+            text-align: center;
+        }
+
+        .dashboard-box:hover {
+            background-color: #555;
+            opacity: 0.9;
+            transform: scale(1.1);
+        }
+
+        .dashboard-box img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+            transition: width 0.3s ease;
+        }
+
+        .dashboard-box:hover img {
+            width: 120px;
+        }
+
+        h2 {
+            color: rgb(215, 235, 252);
+            margin: 0;
+        }
+
+        p {
+            text-align: center;
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="/img/logo.png" alt="Logo">
+        </div>
+        <ul>
+            <li><a href="Register.html">Register</a></li>
+            <li><a href="Deshboard.html">Dashboard</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="login.html">login</a></li>
+        </ul>
+    </div>
+
+    <!-- Dashboard content -->
+    <div class="dashboard-container">
+        <a href="book.html" class="dashboard-box">
+            <img src="img/Books.png" alt="Books Image">
+            <h2>Books</h2>
+        </a>
+        <a href="Members.html" class="dashboard-box">
+            <img src="img/Members.png" alt="Members Image">
+            <h2>Members</h2>
+        </a>
+        <a href="Register.html" class="dashboard-box">
+            <img src="img/Registered.png" alt="Registered User Image">
+            <h2>Registered User</h2>
+        </a>
+        <a href="transaction.html" class="dashboard-box">
+            <img src="img/transaction.png" alt="Transactions Image">
+            <h2>Transactions</h2>
+        </a>
+        <a href="bookfrom.html" class="dashboard-box">
+            <img src="img/Add Book.png" alt="Add Book Image">
+            <h2>Add Book</h2>
+        </a>
+        <a href="isuesbook.html" class="dashboard-box">
+            <img src="img/Issue Book.png" alt="Issue Book Image">
+            <h2>Issue Book</h2>
+        </a>
+    </div>
+</body>
+
+</html>
